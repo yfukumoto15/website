@@ -1,0 +1,321 @@
+/* ========== 基本設定 ========== */
+:root {
+    --font-base: "Noto Sans JP", sans-serif;
+    --font-title: "Cormorant Garamond", serif;
+    --color-main: #5d4037; /* 落ち着いたブラウン */
+    --color-text: #333;
+    --color-accent: #a1887f; /* やや薄いブラウン */
+    --color-bg: #f5f5f5; /* 薄いベージュ */
+}
+
+/* リセット */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* ページ内リンクのスムーズスクロール */
+}
+
+body {
+    font-family: var(--font-base);
+    color: var(--color-text);
+    line-height: 1.8;
+    background-color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom; /* 画像下の余白を消す */
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 100px 0;
+}
+
+.bg-beige {
+    background-color: var(--color-bg);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-family: var(--font-title);
+    font-size: 3rem;
+    color: var(--color-main);
+    letter-spacing: 0.1em;
+}
+
+.section-title p {
+    color: var(--color-accent);
+}
+
+/* ========== ヘッダー ========== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    font-family: var(--font-title);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-main);
+}
+
+.header-nav ul {
+    display: flex;
+    gap: 30px;
+}
+
+.header-nav a {
+    font-family: var(--font-title);
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.header-nav a:hover {
+    color: var(--color-accent);
+}
+
+/* ========== メインビジュアル (Hero) ========== */
+#hero {
+    height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+/* 画像の上に暗いオーバーレイをかける */
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.hero-content {
+    position: relative; /* オーバーレイより手前に表示 */
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-family: var(--font-title);
+    font-size: 4rem;
+    line-height: 1.3;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+
+/* ========== コンセプト (Concept) ========== */
+.concept-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.concept-content img {
+    width: 50%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.concept-text {
+    width: 50%;
+}
+
+.concept-text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--color-main);
+}
+
+.concept-text p {
+    margin-bottom: 20px;
+}
+
+/* ========== メニュー (Menu) ========== */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.menu-item {
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    text-align: center;
+    padding-bottom: 30px;
+    transition: transform 0.3s;
+}
+
+.menu-item:hover {
+    transform: translateY(-10px);
+}
+
+.menu-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.menu-item h3 {
+    font-size: 1.3rem;
+    color: var(--color-main);
+    margin: 20px 0 10px;
+}
+
+.menu-item p {
+    padding: 0 20px;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.menu-item span {
+    font-family: var(--font-title);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-accent);
+}
+
+/* ========== アクセス (Access) ========== */
+.access-content {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+.access-map {
+    width: 60%;
+}
+.access-map iframe {
+    width: 100%;
+    height: 350px;
+    border: none;
+}
+.access-info {
+    width: 40%;
+}
+.access-info dl {
+    border-top: 1px solid #ddd;
+}
+.access-info dt, .access-info dd {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+.access-info dt {
+    font-weight: bold;
+    color: var(--color-main);
+}
+
+/* ========== フッター ========== */
+.footer {
+    background-color: var(--color-main);
+    color: white;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.footer-social {
+    margin-bottom: 20px;
+}
+.footer-social a {
+    font-size: 1.5rem;
+    margin: 0 15px;
+    transition: opacity 0.3s;
+}
+.footer-social a:hover {
+    opacity: 0.7;
+}
+
+/* ========== レスポンシブ対応 (768px以下) ========== */
+@media (max-width: 768px) {
+    .section {
+        padding: 60px 0;
+    }
+    .section-title h2 {
+        font-size: 2.5rem;
+    }
+    .header .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #hero {
+        height: 60vh;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .concept-content {
+        flex-direction: column;
+    }
+    .concept-content img,
+    .concept-text {
+        width: 100%;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .access-content {
+        flex-direction: column;
+    }
+    .access-map,
+    .access-info {
+        width: 100%;
+    }
+}
